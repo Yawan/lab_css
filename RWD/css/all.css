@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 900px) {
+  * .item-group {
+    display: flex;
+  }
+  * .service .item {
+    display: flex;
+  }
+  * .service .item .pic, * .service .item .text {
+    width: 50%;
+  }
+  * .service .item .pic {
+    display: flex;
+  }
+  * .service .item .text {
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  * {
+    font-size: 20px;
+  }
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+img {
+  vertical-align: top;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.text {
+  overflow-y: hidden;
+  max-height: inherit;
+  padding: 10px 0;
+}
+.text h3 {
+  font-size: 1.3rem;
+}
+
+.title {
+  padding: 0.75rem;
+  background-color: #bbbbbb;
+}
+.title h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+.title p {
+  padding: 1rem;
+  font-size: 1.4rem;
+}
+
+.item {
+  flex: 1 1 200px;
+  margin: 0 10px 20px;
+}
+.item .pic img {
+  width: 100%;
+}
+
+.service {
+  margin: 20px 0;
+  background-color: #ddffff;
+}
+.service .item {
+  margin: auto 2rem;
+  font-size: 1rem;
+}
+
+footer {
+  padding: 10px 0;
+  text-align: center;
+  color: #dddddd;
+  background-color: #333333;
+}
+
+.single-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.multi_ellipsis {
+  display: block;
+  display: -webkit-box;
+  overflow: hidden;
+  height: 10rem;
+  line-height: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+}/*# sourceMappingURL=all.css.map */
