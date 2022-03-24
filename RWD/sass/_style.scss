@@ -1,10 +1,10 @@
 @import "./mixin";
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   list-style: none;
-  box-sizing: border-box;
 }
 
 img {
@@ -22,8 +22,8 @@ img {
 }
 
 .title {
-  background-color: #bbb;
   padding: 0.75rem;
+  background-color: #bbb;
 
   h2 {
     text-align: center;
@@ -52,7 +52,6 @@ img {
 
   .item {
     margin: auto 2rem;
-
     font-size: 1rem;
 
     @include for-size(desktop-up) {
@@ -63,10 +62,10 @@ img {
 }
 
 footer {
-  color: #ddd;
-  background-color: #333;
-  text-align: center;
   padding: 10px 0;
+  background-color: #333;
+  color: #ddd;
+  text-align: center;
 }
 
 // desktop
@@ -85,8 +84,8 @@ footer {
       }
 
       .text {
-        padding: 1rem;
         box-sizing: border-box;
+        padding: 1rem;
       }
     }
   }
