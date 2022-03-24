@@ -1,29 +1,71 @@
 @import "./mixin";
 
 * {
+  // RWD(min-width: 900px)
+  @include for-size(tablet-landscape-up) {
+    .item-group {
+      display: flex;
+    }
+
+    .service {
+      .item {
+        display: flex;
+
+        .pic,.text {
+          width: 50%;
+        }
+
+        .pic {
+          display: flex;
+        }
+
+        .text {
+          box-sizing: border-box;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+  // RWD(min-width: 1200px)
+  @include for-size(desktop-up) {
+    font-size: 20px;
+  }
+  // initialize
+
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-img {
-  vertical-align: top;
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
-// mobile first.
+img {
+  vertical-align: top; //override default [baseline]
+}
+
 .banner img {
   width: 100%;
 }
 
-// common classes
 .text {
+  overflow-y: hidden;
+  max-height: inherit;
   padding: 10px 0;
+
+  h3 {
+    font-size: 1.3rem;
+  }
 }
 
+
+
 .title {
-  padding: 0.75rem;
-  background-color: #bbb;
+  padding: .75rem;
+  background-color: #bbbbbb;
 
   h2 {
     text-align: center;
@@ -45,48 +87,41 @@ img {
   }
 }
 
-//service
 .service {
-  margin: 40px 0;
-  background-color: #dff;
+  margin: 20px 0;
+  background-color: #ddffff;
 
   .item {
     margin: auto 2rem;
     font-size: 1rem;
-
-    @include for-size(desktop-up) {
-      font-size: 1.3rem;
-      line-height: 2.4rem;
-    }
   }
 }
+
 
 footer {
   padding: 10px 0;
-  background-color: #333;
-  color: #ddd;
   text-align: center;
+  color: #dddddd;
+  background-color: #333333;
 }
 
-// desktop
-@media screen and (min-width: 768px) {
-  .item-group {
-    display: flex;
-  }
+.single-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 
-  .service {
-    .item {
-      display: flex;
+.multi_ellipsis {
+  // setting for ellipsis, to hide some content to keep layout uniform
+  $line-height-value: 1rem;
+  $number-lines: 10;
 
-      .pic,
-      .text {
-        width: 50%;
-      }
+  display: block; // assure it is block element
+  display: -webkit-box;
+  overflow: hidden;
+  height: $line-height-value * $number-lines;
+  line-height: $line-height-value;
 
-      .text {
-        box-sizing: border-box;
-        padding: 1rem;
-      }
-    }
-  }
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $number-lines;
 }
